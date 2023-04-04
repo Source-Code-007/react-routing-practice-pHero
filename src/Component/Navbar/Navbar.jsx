@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     let [nav, setNav] = useState(false)
@@ -9,7 +9,7 @@ const Navbar = () => {
         { link: 'About', path: '/about', },
         { link: 'Contact', path: '/contact', },
         { link: 'Chart', path: '/chart', },
-        { link: 'Footer', path: '/footer', }
+        { link: 'Services', path: '/services', }
     ]
     return (
         <nav className='bg-slate-800 text-slate-50 font-semibold text-xl py-4'>
@@ -23,9 +23,9 @@ const Navbar = () => {
                             nav ? <XMarkIcon className='h-8 w-8'></XMarkIcon> : <Bars3Icon className='h-8 w-8'></Bars3Icon>
                         }
                     </span>
-                    <ul className={`md:flex gap-4 md:static duration-700 z-50 absolute ${nav ? 'right-10' : '-right-52'} top-10 bg-slate-800 rounded-lg`}>
+                    <ul className={`md:flex gap-4 md:static duration-700 absolute ${nav ? 'right-10' : '-right-52'} top-10 bg-slate-800 rounded-lg`}>
                         {
-                            navData.map((nav, idx) => <li className='block px-5 py-2' key={idx}><Link className='block' to={nav.path}>{nav.link}</Link></li>)
+                            navData.map((nav, idx) => <li className='block px-5 py-2' key={idx}><NavLink className='block' to={nav.path}>{nav.link}</NavLink></li>)
                         }
                     </ul>
                 </div>

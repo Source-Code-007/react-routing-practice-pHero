@@ -7,11 +7,13 @@ import Contact from './Component/Contact/Contact';
 import About from './Component/About/About';
 import Chart from './Component/Chart/Chart';
 import Home from './Component/Home/Home';
+import ErrorPage from './Component/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
